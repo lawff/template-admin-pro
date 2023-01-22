@@ -10,7 +10,8 @@
     "prepare": "husky install",
     "build": "tsc && vite build",
     "check-types": "tsc --noEmit --pretty",
-    "up": "taze major -I"
+    "up": "taze major -I",
+    "lint:fix": "eslint --fix --ext .js,.ts,.tsx ./src --ignore-path .gitignore"
   },
   "dependencies": {
     "@unocss/reset": "^0.48.4",
@@ -19,6 +20,8 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
     "@iconify-json/carbon": "^1.1.14",
     "@lawlietff/eslint-config": "^0.0.9",
     "@types/node": "^18.11.18",
