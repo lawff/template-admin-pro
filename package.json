@@ -1,0 +1,51 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "private": true,
+  "author": "lawliet",
+  "scripts": {
+    "dev": "vite --port 7777 --open",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "prepare": "husky install",
+    "build": "tsc && vite build",
+    "up": "taze major -I"
+  },
+  "dependencies": {
+    "@unocss/reset": "^0.48.4",
+    "nprogress": "^0.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@iconify-json/carbon": "^1.1.14",
+    "@lawlietff/eslint-config": "^0.0.9",
+    "@types/node": "^18.11.18",
+    "@types/nprogress": "^0.2.0",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@unocss/preset-attributify": "^0.48.4",
+    "@vitejs/plugin-react-swc": "^3.0.1",
+    "eslint": "^8.32.0",
+    "husky": "^8.0.3",
+    "pnpm": "^7.25.1",
+    "taze": "^0.8.5",
+    "typescript": "^4.9.4",
+    "unocss": "^0.48.4",
+    "vite": "^4.0.4",
+    "vite-plugin-inspect": "^0.7.14",
+    "vite-tsconfig-paths": "^4.0.5"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
