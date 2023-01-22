@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "build": "tsc && vite build",
+    "check-types": "tsc --noEmit --pretty",
     "up": "taze major -I"
   },
   "dependencies": {
@@ -28,6 +29,7 @@
     "@vitejs/plugin-react-swc": "^3.0.1",
     "eslint": "^8.32.0",
     "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
     "pnpm": "^7.25.1",
     "taze": "^0.8.5",
     "typescript": "^4.9.4",
