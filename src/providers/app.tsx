@@ -3,7 +3,7 @@ import { ErrorBoundary } from 'react-error-boundary'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import { SWRConfig } from 'swr'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { Button, ColorSchemeProvider, MantineProvider } from '@mantine/core'
+import { Button, ColorSchemeProvider, MantineProvider, createEmotionCache } from '@mantine/core'
 import type { ColorScheme } from '@mantine/core'
 import { useState } from 'react'
 import { Notifications } from '~/components/Notifications'
@@ -16,7 +16,7 @@ const ErrorFallback = () => {
       role="alert"
     >
       <h2 className="text-lg font-semibold">Ooops, something went wrong :( </h2>
-      <Button className="mt-4 c-red" onClick={() => window.location.assign(window.location.origin)}>
+      <Button className="mt-4" onClick={() => window.location.reload()}>
         Refresh
       </Button>
     </div>
@@ -29,6 +29,7 @@ interface AppProviderProps {
 
 export const AppProvider = ({ children }: AppProviderProps) => {
   const [colorScheme, setColorScheme] = useState<ColorScheme>('light')
+  const appendCache = createEmotionCache({ key: 'lawff', prepend: false })
 
   const toggleColorScheme = (value?: ColorScheme) => {
     if (value === 'dark' || colorScheme === 'light')
@@ -57,7 +58,9 @@ export const AppProvider = ({ children }: AppProviderProps) => {
           <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
             <MantineProvider
               theme={{ colorScheme }}
+              emotionCache={appendCache}
               withGlobalStyles
+              withNormalizeCSS
             >
               <SWRConfig value={{}}>
                 <Notifications />

@@ -12,10 +12,6 @@ export function Notifications() {
         // Define default options
         className: '',
         duration: 2000,
-        style: {
-          background: '#363636',
-          color: '#fff',
-        },
       }}
     />
   )
